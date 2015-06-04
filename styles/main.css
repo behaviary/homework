@@ -1,14 +1,51 @@
 .PROGRAMS-SECTION {
-	padding-top: 300px; /* temporary */
+	padding-top: 120px; /* temporary */
 }
+
+/* GLOBALLY SHARED STYLES */
+
+.really {
+	font-size: 0.7rem
+}
+
+.quiet {
+	color: #bebeb5;
+}
+
+.table {
+	background-color: transparent;
+	border: none;
+}
+
+table {
+	width: 100%;
+}
+
+table thead tr th {
+	font-weight: 400;
+}
+
+td {
+	border-bottom: 1px solid #f8f8f6;
+}
+table tr:nth-of-type(even) {
+	background-color: transparent;
+}
+
+ul {
+	margin: 0;
+}
+
+table tr td,
+table thead tr th {
+	padding: 0;
+}
+
+/*  NAVIGATION STYLES  */
 
 .top-bar {
 	height: 65px;
 	background-color: #edf7f3;
-}
-
-.top-bar ul{
-	display: inline-block;
 }
 
 .logo {
@@ -16,11 +53,16 @@
 	margin: 5px 100px 10px 14px;
 }
 
+.top-bar ul{
+	display: inline-block;
+}
+
 .nav-tabs {
 	padding-top: 22px;
 }
 
 .tabs .tab-title {
+	top: 1px;
 	display: inline-block;
 	background: linear-gradient(0deg, #eff2f1, #fff) no-repeat;
 }
@@ -34,15 +76,18 @@
 	background-color: rgba(100,100,100, 0);
 	border-top: 1px solid #d4e2e6;
 	border-right: 1px solid #dddede;
+	border-bottom: 1px solid #cbcfd1;
 }
 
 .tabs .tab-title.active {
+	top: -1px;
 	height: 42px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 
 .tabs .tab-title.active a {
+	padding: 10.5px 30px;
 	border-top: 1px solid #a7b3b7;
 	border-left: 1px solid #a7b3b7;
 	border-right:1px solid #a7b3b7;
@@ -50,7 +95,7 @@
 	border-top-right-radius: 5px;
 	font-weight: bold;
 	color: #37444e;
-	border-bottom: 2px solid white;
+	border-bottom: 3px solid white;
 }
 
 .tabs .tab-title.active a:before {
@@ -62,7 +107,7 @@
 	background-color: white;
 	display: inline-block;
 	padding: 14px 8%;
-	border-top: 1px solid #a7b3b7;
+	border-top: 1px solid #cbe3d7;
 	border-bottom: 1px solid #d8d8ce;
 	-webkit-box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
 		 -moz-box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
@@ -90,8 +135,72 @@
 	font-weight: bold;
 }
 
+/* MAIN CONTENT STYLES  */
+
 .main {
 	height: 100%;
 	background-color: #f4f4ee;
 	padding-left: 8%;
+}
+
+/* PROGRAM MODULE STYLES */
+
+.program {
+	width: 243px;
+	background-color: #fff;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 4px 4px -1px rgba(50, 50, 50, 0.3);
+	   -moz-box-shadow: 0px 4px 4px -1px rgba(50, 50, 50, 0.3);
+	        box-shadow: 0px 4px 4px -1px rgba(50, 50, 50, 0.3);
+}
+
+.program .top {
+	padding: 0 17px;
+}
+
+.program .program-name-edit {
+	padding: 17px 0;
+	vertical-align: center;
+}
+
+.program .program-name-edit .program-name {
+	font-weight: bold;
+}
+
+.program .program-name-edit i {
+	width: 22px;
+	height: 20px;
+	overflow: hidden;
+	float: right;
+	background: url("../assets/pencil_icons.png") no-repeat top;
+	background-color: #fcfcfa;
+	border: 1px solid #f4f4f1;
+	border-radius: 2px;
+}
+
+.program .program-name-edit i:hover {
+	background: url("../assets/pencil_icons.png") no-repeat bottom;
+	-webkit-transform: scale(1.1);
+		 -moz-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+					transform: scale(1.1);
+}
+
+.program .program-sales-graph {
+
+}
+
+.program .program-sales-summary {
+	background-color: #fbfbf6;
+	display: inline-block;
+	border-top: 1px solid #f5f5eb;
+	border-bottom: 1px solid #f1f1f0;
+}
+
+.accordion .accordion-navigation > a {
+	padding: 5px 17px;
+	background-color: transparent;
+	float: left;
+	font-weight: 400;
+	font-size: 0.8rem;
 }

@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="http://cdn.foundation5.zurb.com/foundation.js"></script>
+	<script type="text/javascript" src="../scripts/scripts.js"></script>
 	<!--
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js"></script>
@@ -19,8 +20,7 @@
 			<a href="/"><img src="../assets/logo.png"></a>
 		</div>
 		<ul class="nav-tabs tabs right">
-			<li class="tab-title active"><a href="#">Dashboard</a>
-			</li>
+			<li class="tab-title active"><a href="#">Dashboard</a></li>
 			<li class="tab-title"><a href="#">Sign In</a></li>
 			<li class="tab-title"><a href="#">Classes</a></li>
 			<li class="tab-title"><a href="#">Workshops</a></li>
@@ -43,51 +43,79 @@
 				<span>New Program</span>
 			</div>
 			<div class="index-programs-section small-10 columns right">
-				<div class="small-4 columns">
-					<div class="row">{{program.name}} <span><img src="../assets/pencil_icons.png"></span></div>
-					<div class="row quiet">Sales by month</div>
-					<div class="row">{{year helper graph}}</div>
-					<div class="row"></div>
-					<div class="more">
-						<table>
-							<thead>
+				<div class="program">
+					<div class="top small-12 columns">
+						<div class="program-name-edit row"><span class="program-name">Yoga Duets</span><i class="edit-icon"></i></div>
+						<div class="program-sales-graph row">
+							<div class="small-12 columns">
+								<div class="row quiet">Sales by month</div>
+								<div class="row"><img src="../assets/graph.png"></div>
+							</div>
+						</div>
+					</div>
+					<div class="program-sales-summary top row">
+						<table class="table">
+							<thead class="table">
 								<tr>
-									<th>Price Name</th>
-									<th>Current</th>
-									<th>1-Year</th>
+									<th class="table really quiet">Total Monthly</th>
+									<th class="table really quiet">Current</th>
+									<th class="table really quiet">1-Year</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>{{name}}</td>
-									<td>{{sales}}</td>
-									<td>{{graphs}}</td>
+									<td class="table td quiet">Sales</td>
+									<td class="table td">$23,483</td>
+									<td class="table td"><img src="../assets/spark_line.png"></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
+					<ul class="accordion more" data-accordion>
+						<li class="accordion-navigation">
+							<div id="program1" class="content">
+								 <table class="table">
+									<thead class="table">
+										<tr>
+											<th>Price Name</th>
+											<th>Current</th>
+											<th>1-Year</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{{name}}</td>
+											<td>{{sales}}</td>
+											<td>{{graphs}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<a id="moreProgram1" href="#program1">more</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="summarize-programs-section row">
 			<div class="small-12 columns">
-				<table>
-					<thead>
+				<table class="table">
+					<thead class="table">
 						<tr>
 							<th>All Programs</th>
 							<th>Monthly Sales</th>
 							<th>Monthly Attendence</th>
 						</tr>
 						<tbody>
-							<tr>
-								<td>Open Practice<span>more</span></td>
+							<tr class="table">
+								<td>Open Practice<a class="row quiet" href="#">more</a></td>
 								<td>$572.00</td>
 								<td>276 views</td>
 							</tr>
-							<tr>
-								<th>Yoga Videos<span>more</span></th>
-								<th>$391.32</th>
-								<th>82 views</th>
+							<tr class="table">
+								<td>Yoga Videos<a class="row quiet" href="#">more</a></td>
+								<td>$391.32</td>
+								<td>82 views</td>
 							</tr>
 						</tbody>
 					</thead>
