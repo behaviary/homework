@@ -8,6 +8,11 @@ $(document).ready(function() {
 		}
 	});
 
+	$(".tab-title").click(function(e) {
+		$(".tab-title.active").removeClass("active")
+		$(this).addClass("active");
+	});
+
 	$(document).foundation();
 
 });

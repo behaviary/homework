@@ -4,6 +4,7 @@
 
 /* GLOBALLY SHARED STYLES */
 
+/* Just being cute - change to more descriptive */
 .really {
 	font-size: 0.7rem
 }
@@ -19,15 +20,13 @@
 
 table {
 	width: 100%;
+	margin: 0.5rem 0;
 }
 
 table thead tr th {
 	font-weight: 400;
 }
 
-td {
-	border-bottom: 1px solid #f8f8f6;
-}
 table tr:nth-of-type(even) {
 	background-color: transparent;
 }
@@ -41,11 +40,20 @@ table thead tr th {
 	padding: 0;
 }
 
+button {
+	position: relative;
+	text-align:center;
+	color:#FFF;
+	text-decoration:none;
+	display: block;
+}
+
 /*  NAVIGATION STYLES  */
 
 .top-bar {
 	height: 65px;
 	background-color: #edf7f3;
+	min-width: 1100px;
 }
 
 .logo {
@@ -75,7 +83,7 @@ table thead tr th {
 	color: #709582;
 	background-color: rgba(100,100,100, 0);
 	border-top: 1px solid #d4e2e6;
-	border-right: 1px solid #dddede;
+	border-left: 1px solid #dddede;
 	border-bottom: 1px solid #cbcfd1;
 }
 
@@ -127,12 +135,13 @@ table thead tr th {
 .tab-content li a {
 	font-family: Helvetica;
 	font-size: 1rem;
+	font-weight: 400;
 	color: #777;
 }
 
 .tab-content li a.active{
-	color: #555;
-	font-weight: bold;
+	color: #5e5e5e;
+	font-weight: 500;
 }
 
 /* MAIN CONTENT STYLES  */
@@ -141,6 +150,16 @@ table thead tr th {
 	height: 100%;
 	background-color: #f4f4ee;
 	padding-left: 8%;
+}
+
+.new-program-section {
+}
+
+.new-program-button {
+	width: 75px;
+	height: 67px;
+	border-radius: 4px;
+	padding: 12%;
 }
 
 /* PROGRAM MODULE STYLES */
@@ -158,16 +177,12 @@ table thead tr th {
 	padding: 0 17px;
 }
 
-.program .program-name-edit {
+.program .program-header {
 	padding: 17px 0;
 	vertical-align: center;
 }
 
-.program .program-name-edit .program-name {
-	font-weight: bold;
-}
-
-.program .program-name-edit i {
+.edit {
 	width: 22px;
 	height: 20px;
 	overflow: hidden;
@@ -178,16 +193,12 @@ table thead tr th {
 	border-radius: 2px;
 }
 
-.program .program-name-edit i:hover {
+.edit:hover {
 	background: url("../assets/pencil_icons.png") no-repeat bottom;
-	-webkit-transform: scale(1.1);
-		 -moz-transform: scale(1.1);
-			-ms-transform: scale(1.1);
-					transform: scale(1.1);
 }
 
-.program .program-sales-graph {
-
+.program .program-header .program-name {
+	font-weight: bold;
 }
 
 .program .program-sales-summary {
@@ -203,4 +214,33 @@ table thead tr th {
 	float: left;
 	font-weight: 400;
 	font-size: 0.8rem;
+}
+
+/* NEW PROGRAM MODULE STYLES */
+
+.new-program {
+	width:75px;
+	height:67px;
+	padding: 10%;
+	background: #dfffc2;
+	border:1px solid #91b57c;
+	background-image:-webkit-linear-gradient(top, #bcd89e, #9ac084);
+	-webkit-border-radius:5px;
+	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 0.2px 0 #dbdbd2, 0 1px 1px rgba(0, 0, 0, .5);
+}
+
+.new-program:active {
+	-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+	top:1px;
+}
+
+.new-program:hover {
+	background: #dfffc2;
+	background-image:-webkit-linear-gradient(top, #9ac084, #bcd89e);
+}
+
+.new-program-label {
+	max-width: 76px;
+	font-size: 0.75rem;
+	text-align: center;
 }
