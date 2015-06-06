@@ -111,10 +111,10 @@ button {
 	background-color: #fff;
 }
 
-.tab-content {
+.tabs-content {
 	background-color: white;
 	display: inline-block;
-	padding: 14px 8%;
+	padding-left: 8%;
 	border-top: 1px solid #cbe3d7;
 	border-bottom: 1px solid #d8d8ce;
 	-webkit-box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
@@ -122,26 +122,28 @@ button {
 		 			box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
 }
 
-.tab-content:before {
+.tabs-content:before {
 	border-top: 1px solid #cbcfd1;
 	z-index: 1;
 }
 
-.tab-content li {
+.tabs-content .item {
 	display: inline;
 	padding-right: 30px;
-}
-
-.tab-content li a {
 	font-family: Helvetica;
 	font-size: 1rem;
 	font-weight: 400;
 	color: #777;
 }
 
-.tab-content li a.active{
+.tabs-content .item.active{
 	color: #5e5e5e;
 	font-weight: 500;
+}
+
+.tabs-content .item:hover {
+	color: #999;
+	font-weight: bold;
 }
 
 /* MAIN CONTENT STYLES  */

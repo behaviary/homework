@@ -11,21 +11,56 @@
 		<div class="logo">
 			<a href="/"><img src="../assets/logo.png"></a>
 		</div>
-		<ul class="nav-tabs tabs right">
-			<li class="tab-title active"><a href="#">Dashboard</a></li>
-			<li class="tab-title"><a href="#">Sign In</a></li>
-			<li class="tab-title"><a href="#">Classes</a></li>
-			<li class="tab-title"><a href="#">Workshops</a></li>
-			<li class="tab-title"><a href="#">Appointments</a></li>
-			<li class="tab-title"><a href="#">Client Home</a></li>
-			<li class="tab-title"><a href="#">Retail</a></li>
+		<ul class="nav-tabs tabs right" data-tab>
+			<li class="tab-title active">
+				<a href="#dashboard">Dashboard</a>
+			</li>
+			<li class="tab-title">
+				<a href="#signIn">Sign In</a>
+			</li>
+			<li class="tab-title">
+				<a href="#classes">Classes</a>
+			</li>
+			<li class="tab-title">
+				<a href="#workshops">Workshops</a>
+			</li>
+			<li class="tab-title">
+				<a href="#appointments">Appointments</a>
+			</li>
+			<li class="tab-title">
+				<a href="#clientHome">Client Home</a>
+			</li>
+			<li class="tab-title">
+				<a href="#retail">Retail</a>
+			</li>
 		</ul>
-		<ul class="tab-content row">
-			<li><a href="#">Dashboard</a></li>
-			<li><a class="active" href="#">Business Overview</a></li>
-			<li><a href="#">Schedule</a></li>
-			<li><a href="#">Reports</a></li>
-		</ul>
+		<!-- contents of tabs -->
+		<div class="tabs-content row">
+			<div class="content active" id="dashboard">
+				<a class="item">Dashboard</a>
+				<a class="item active">Business Overview</a>
+				<a class="item">Schedule</a>
+				<a class="item">Reports</a>
+			</div>
+			<div class="content" id="signIn">
+				<a class="item">Sign In</a>
+			</div>
+			<div class="content" id="classes">
+				<a class="item">Classes</a>
+			</div>
+			<div class="content" id="workshops">
+				<a class="item">Workshops</a>
+			</div>
+			<div class="content" id="appointments">
+				<a class="item">Appointments</a>
+			</div>
+			<div class="content" id="clientHome">
+				<a class="item">Client Home</a>
+			</div>
+			<div class="content" id="retail">
+				<a class="item">Retail</a>
+			</div>
+		</div>
 	</nav>
 	<!-- MAIN CONTENT -->
 	<section class="main">
