@@ -34,50 +34,57 @@
 				<a href="#retail">Retail</a>
 			</li>
 		</ul>
-		<!-- contents of tabs -->
-		<div class="tabs-content row">
-			<div class="content active" id="dashboard">
-				<a class="item">Dashboard</a>
-				<a class="item active">Business Overview</a>
-				<a class="item">Schedule</a>
-				<a class="item">Reports</a>
-			</div>
-			<div class="content" id="signIn">
-				<a class="item">Sign In</a>
-			</div>
-			<div class="content" id="classes">
-				<a class="item">Classes</a>
-			</div>
-			<div class="content" id="workshops">
-				<a class="item">Workshops</a>
-			</div>
-			<div class="content" id="appointments">
-				<a class="item">Appointments</a>
-			</div>
-			<div class="content" id="clientHome">
-				<a class="item">Client Home</a>
-			</div>
-			<div class="content" id="retail">
-				<a class="item">Retail</a>
-			</div>
-		</div>
 	</nav>
+	<!-- contents of tabs -->
+	<div class="tabs-content">
+		<div class="content active" id="dashboard">
+			<a class="item">Dashboard</a>
+			<a class="item active">Business Overview</a>
+			<a class="item">Schedule</a>
+			<a class="item">Reports</a>
+		</div>
+		<div class="content" id="signIn">
+			<a class="item">Sign In</a>
+		</div>
+		<div class="content" id="classes">
+			<a class="item">Classes</a>
+		</div>
+		<div class="content" id="workshops">
+			<a class="item">Workshops</a>
+		</div>
+		<div class="content" id="appointments">
+			<a class="item">Appointments</a>
+		</div>
+		<div class="content" id="clientHome">
+			<a class="item">Client Home</a>
+		</div>
+		<div class="content" id="retail">
+			<a class="item">Retail</a>
+		</div>
+	</div>
 	<!-- MAIN CONTENT -->
 	<section class="main">
 		<div class="PROGRAMS-SECTION">
 			<!-- NEW PROGRAM -->
-			<div class="new-program-section small-2 columns center">
-				<button class="add new-program-button"><img src="../assets/plus_icon.png"></button>
+			<div class="new-program-section small-12 medium-2 columns center">
+				<button class="add new-program-button small-12"><img src="../assets/plus_icon.png"></button>
 				<label class="new-program-label-label">New Program</label>
 			</div>
 			<!-- ALL PROGRAMS -->
-			<div class="index-programs-section small-10 columns right">
+			<div class="index-programs-section small-12 medium-10 columns right">
 				<!-- FORM SHOWS UP HERE -->
-				<form class="program new-program-form">
+				<form id="newProgramForm" class="program new-program-form hidden">
+					<input type="hidden" name="ProgramId" value="105">
+					<div class="program-header row">
+						<div class="small-12 columns">
+							<div id="formTitle" class="program-name">New Program</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="small-12 columns">
 							<label>Program Type
-							  <select>
+							  <select name="program-type">
+							    <option value="" disabled selected>Select a type</option>
 							    <option value="count-series">Count Series</option>
 							    <option value="time-series">Time Series</option>
 							    <option value="membership">Membership</option>
@@ -87,8 +94,8 @@
 					</div>
 					<div class="row">
 						<div class="small-12 columns">
-							<label>Name
-							  <input type="text" placeholder="Yoga Class" />
+							<label for="name">Name
+							  <input name="Name" id="newProgramName" type="text" placeholder="Yoga Class" />
 							</label>
 						</div>
 					</div>
@@ -96,15 +103,18 @@
 						<div class="top small-12 columns center">
 							<label>Allow Online Scheduling</label>
 							<div class="switch">
-							  <input id="allow-online-scheduling" type="checkbox">
+							  <input name="online-scheduling" id="allow-online-scheduling" type="checkbox">
 							  <label for="allow-online-scheduling"></label>
+							  <div class="online-scheduling-status small-8 columns right">
+							  	<span id="onlineSchedulingStatus" class="quiet">Off</span>
+							  </div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="small-12 columns center">
 							<label>Default Capacity
-							<input type="number"/>
+							<input name="capacity" type="number"/>
 							</label>
 						</div>
 					</div>
@@ -112,26 +122,181 @@
 						<div class="top small-12 columns center">
 						  <label>Tabs this program is on</label>
 							<div class="row">
-							  <input id="classes" type="checkbox"><label for="classes">classes</label>
-							  <input id="appointments" type="checkbox"><label for="appointments">appointments</label>
+							  <input name="classes" id="classes" type="checkbox"><label for="classes">classes</label>
+							  <input name="appointments" id="appointments" type="checkbox"><label for="appointments">appointments</label>
 							</div>
 							<div class="row">
-							  <input id="workshops" type="checkbox"><label for="workshops">workshops</label>
-							  <input id="outside" type="checkbox"><label for="outside">outside</label>
+							  <input name="workshops" id="workshops" type="checkbox"><label for="workshops">workshops</label>
+							  <input name="outside" id="outside" type="checkbox"><label for="outside">outside</label>
 							 </div>
 							 <div class="row">
-							  <input id="inside" type="checkbox"><label for="inside">inside</label>
-							  <input id="gym" type="checkbox"><label for="gym">gym</label>
+							  <input name="inside" id="inside" type="checkbox"><label for="inside">inside</label>
+							  <input name="gym" id="gym" type="checkbox"><label for="gym">gym</label>
 							 </div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="small-12 columns">
-							<button class="submit new-program-button" role="button" aria-label="submit" href="#">Submit</button>
+							<button id="submitProgram" class="submit new-program-button" role="button" aria-label="submit" href="#">Submit</button>
 						</div>
 					</div>
 				</form>
 				<!-- /FORM -->
+				<!-- PROGRAM 1 -->
+				<div class="program">
+					<div class="top small-12 columns">
+						<div class="program-header row"><span class="program-name">Yoga Classes</span><i class="edit"></i></div>
+						<div class="program-sales-graph row">
+							<div class="small-12 columns">
+								<div class="row quiet">Sales by month</div>
+								<div class="row"><img src="../assets/graph.png"></div>
+							</div>
+						</div>
+					</div>
+					<div class="program-sales-details top row">
+						<table class="table">
+							<thead class="table">
+								<tr>
+									<th class="table really quiet">Total Monthly</th>
+									<th class="table really quiet">Current</th>
+									<th class="table really quiet">1-Year</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="table td quiet">Sales</td>
+									<td class="table td">$23,483</td>
+									<td class="table td"><img src="../assets/spark_line.png"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<ul class="pricing-option-details accordion more" data-accordion>
+						<li class="accordion-navigation">
+							<div id="program1" class="content">
+								 <table class="table">
+									<thead class="table">
+										<tr>
+											<th class="quiet">Price Name</th>
+											<th class="really quiet">Current</th>
+											<th class="really quiet">1-Year</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Monthly Unlimited</td>
+											<td>$4,260</td>
+											<td rowspan="7" class="spark-lines"></td>
+										</tr>
+										<tr>
+											<td>Student 1 Month</td>
+											<td>$1,750</td>
+										</tr>
+										<tr>
+											<td>Single Visit</td>
+											<td>$560</td>
+										</tr>
+										<tr>
+											<td>10 Class Pass</td>
+											<td>$475</td>
+										</tr>
+										<tr>
+											<td>Student Single Visit</td>
+											<td>$445</td>
+										</tr>
+										<tr>
+											<td>20 Class Pass</td>
+											<td>$230</td>
+										</tr>
+										<tr>
+											<td>5 Class Pass</td>
+											<td>$520</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<a id="moreProgram1" href="#program1">more</a>
+						</li>
+					</ul>
+				</div>
+					<!-- PROGRAM 2 -->
+				<div class="program">
+					<div class="top small-12 columns">
+						<div class="program-header row"><span class="program-name">Yoga Privates</span><i class="edit"></i></div>
+						<div class="program-sales-graph row">
+							<div class="small-12 columns">
+								<div class="row quiet">Sales by month</div>
+								<div class="row"><img src="../assets/graph.png"></div>
+							</div>
+						</div>
+					</div>
+					<div class="program-sales-details top row">
+						<table class="table">
+							<thead class="table">
+								<tr>
+									<th class="table really quiet">Total Monthly</th>
+									<th class="table really quiet">Current</th>
+									<th class="table really quiet">1-Year</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="table td quiet">Sales</td>
+									<td class="table td">$23,483</td>
+									<td class="table td"><img src="../assets/spark_line.png"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<ul class="pricing-option-details accordion more" data-accordion>
+						<li class="accordion-navigation">
+							<div id="program2" class="content">
+								 <table class="table">
+									<thead class="table">
+										<tr>
+											<th class="quiet">Price Name</th>
+											<th class="really quiet">Current</th>
+											<th class="really quiet">1-Year</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Monthly Unlimited</td>
+											<td>$4,260</td>
+											<td rowspan="7" class="spark-lines"></td>
+										</tr>
+										<tr>
+											<td>Student 1 Month</td>
+											<td>$1,750</td>
+										</tr>
+										<tr>
+											<td>Single Visit</td>
+											<td>$560</td>
+										</tr>
+										<tr>
+											<td>10 Class Pass</td>
+											<td>$475</td>
+										</tr>
+										<tr>
+											<td>Student Single Visit</td>
+											<td>$445</td>
+										</tr>
+										<tr>
+											<td>20 Class Pass</td>
+											<td>$230</td>
+										</tr>
+										<tr>
+											<td>5 Class Pass</td>
+											<td>$520</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<a id="moreProgram2" href="#program2">more</a>
+						</li>
+					</ul>
+				</div>
+					<!-- PROGRAM 3 -->
 				<div class="program">
 					<div class="top small-12 columns">
 						<div class="program-header row"><span class="program-name">Yoga Duets</span><i class="edit"></i></div>
@@ -160,9 +325,9 @@
 							</tbody>
 						</table>
 					</div>
-					<ul class="accordion more" data-accordion>
+					<ul class="pricing-option-details accordion more" data-accordion>
 						<li class="accordion-navigation">
-							<div id="program1" class="content">
+							<div id="program3" class="content">
 								 <table class="table">
 									<thead class="table">
 										<tr>
@@ -174,37 +339,37 @@
 									<tbody>
 										<tr>
 											<td>Monthly Unlimited</td>
-											<td>4260</td>
+											<td>$4,260</td>
 											<td rowspan="7" class="spark-lines"></td>
 										</tr>
 										<tr>
 											<td>Student 1 Month</td>
-											<td>1750</td>
+											<td>$1,750</td>
 										</tr>
 										<tr>
 											<td>Single Visit</td>
-											<td>560</td>
+											<td>$560</td>
 										</tr>
 										<tr>
 											<td>10 Class Pass</td>
-											<td>475</td>
+											<td>$475</td>
 										</tr>
 										<tr>
 											<td>Student Single Visit</td>
-											<td>445</td>
+											<td>$445</td>
 										</tr>
 										<tr>
 											<td>20 Class Pass</td>
-											<td>230</td>
+											<td>$230</td>
 										</tr>
 										<tr>
 											<td>5 Class Pass</td>
-											<td>520</td>
+											<td>$520</td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
-							<a id="moreProgram1" href="#program1">more</a>
+							<a id="moreProgram3" href="#program3">more</a>
 						</li>
 					</ul>
 				</div>
