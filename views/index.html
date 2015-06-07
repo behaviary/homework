@@ -72,68 +72,66 @@
 			</div>
 			<!-- ALL PROGRAMS -->
 			<div class="index-programs-section small-10 columns right">
-			<!-- FORM SHOWS UP HERE -->
-
-			<form class="program new-program-form">
-				<div class="row">
-					<div class="small-12 columns">
-						<label>Program Type
-						  <select>
-						    <option value="count-series">Count Series</option>
-						    <option value="time-series">Time Series</option>
-						    <option value="membership">Membership</option>
-						  </select>
-						</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="small-12 columns">
-						<label>Name
-						  <input type="text" placeholder="Yoga Class" />
-						</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="top small-12 columns center">
-						<label>Allow Online Scheduling</label>
-						<div class="switch">
-						  <input id="allow-online-scheduling" type="checkbox">
-						  <label for="allow-online-scheduling"></label>
+				<!-- FORM SHOWS UP HERE -->
+				<form class="program new-program-form">
+					<div class="row">
+						<div class="small-12 columns">
+							<label>Program Type
+							  <select>
+							    <option value="count-series">Count Series</option>
+							    <option value="time-series">Time Series</option>
+							    <option value="membership">Membership</option>
+							  </select>
+							</label>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="small-12 columns center">
-						<label>Default Capacity
-						<input type="number"/>
-						</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="top small-12 columns center">
-					  <label>Tabs this program is on</label>
-						<div class="row">
-						  <input id="classes" type="checkbox"><label for="classes">classes</label>
-						  <input id="appointments" type="checkbox"><label for="appointments">appointments</label>
+					<div class="row">
+						<div class="small-12 columns">
+							<label>Name
+							  <input type="text" placeholder="Yoga Class" />
+							</label>
 						</div>
-						<div class="row">
-						  <input id="workshops" type="checkbox"><label for="workshops">workshops</label>
-						  <input id="outside" type="checkbox"><label for="outside">outside</label>
-						 </div>
-						 <div class="row">
-						  <input id="inside" type="checkbox"><label for="inside">inside</label>
-						  <input id="gym" type="checkbox"><label for="gym">gym</label>
-						 </div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="small-12 columns">
-						<button class="submit new-program-button" role="button" aria-label="submit" href="#">Submit</button>
+					<div class="row">
+						<div class="top small-12 columns center">
+							<label>Allow Online Scheduling</label>
+							<div class="switch">
+							  <input id="allow-online-scheduling" type="checkbox">
+							  <label for="allow-online-scheduling"></label>
+							</div>
+						</div>
 					</div>
-				</div>
-			</form>
-
-			<!-- /FORM -->
+					<div class="row">
+						<div class="small-12 columns center">
+							<label>Default Capacity
+							<input type="number"/>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="top small-12 columns center">
+						  <label>Tabs this program is on</label>
+							<div class="row">
+							  <input id="classes" type="checkbox"><label for="classes">classes</label>
+							  <input id="appointments" type="checkbox"><label for="appointments">appointments</label>
+							</div>
+							<div class="row">
+							  <input id="workshops" type="checkbox"><label for="workshops">workshops</label>
+							  <input id="outside" type="checkbox"><label for="outside">outside</label>
+							 </div>
+							 <div class="row">
+							  <input id="inside" type="checkbox"><label for="inside">inside</label>
+							  <input id="gym" type="checkbox"><label for="gym">gym</label>
+							 </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="small-12 columns">
+							<button class="submit new-program-button" role="button" aria-label="submit" href="#">Submit</button>
+						</div>
+					</div>
+				</form>
+				<!-- /FORM -->
 				<div class="program">
 					<div class="top small-12 columns">
 						<div class="program-header row"><span class="program-name">Yoga Duets</span><i class="edit"></i></div>
@@ -168,16 +166,40 @@
 								 <table class="table">
 									<thead class="table">
 										<tr>
-											<th>Price Name</th>
-											<th>Current</th>
-											<th>1-Year</th>
+											<th class="quiet">Price Name</th>
+											<th class="really quiet">Current</th>
+											<th class="really quiet">1-Year</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>{{name}}</td>
-											<td>{{sales}}</td>
-											<td>{{graphs}}</td>
+											<td>Monthly Unlimited</td>
+											<td>4260</td>
+											<td rowspan="7" class="spark-lines"></td>
+										</tr>
+										<tr>
+											<td>Student 1 Month</td>
+											<td>1750</td>
+										</tr>
+										<tr>
+											<td>Single Visit</td>
+											<td>560</td>
+										</tr>
+										<tr>
+											<td>10 Class Pass</td>
+											<td>475</td>
+										</tr>
+										<tr>
+											<td>Student Single Visit</td>
+											<td>445</td>
+										</tr>
+										<tr>
+											<td>20 Class Pass</td>
+											<td>230</td>
+										</tr>
+										<tr>
+											<td>5 Class Pass</td>
+											<td>520</td>
 										</tr>
 									</tbody>
 								</table>

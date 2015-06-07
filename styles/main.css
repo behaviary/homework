@@ -10,7 +10,7 @@ body {
 
 /* Just being cute - change to more descriptive */
 .really {
-	font-size: 0.7rem
+	font-size: 0.8rem
 }
 
 .quiet {
@@ -253,6 +253,11 @@ button {
 	border-bottom: 1px solid #f1f1f0;
 }
 
+.spark-lines {
+	background: url("../assets/spark_lines.png") no-repeat;
+	background-size: contain;
+}
+
 /* hack to fight off foundation */
 .accordion .accordion-navigation > a {
 	padding: 5px 17px;
@@ -280,10 +285,6 @@ button {
 	border-collapse: collapse;
 }
 
-.summary-section thead {
-	border-bottom: 1.5px solid #e1e1d8;
-}
-
 .summary-section th:first-of-type {
 	font-size: 1rem;
 	width: 130px;
@@ -294,6 +295,7 @@ button {
 }
 
 .summary-section th {
+	border-bottom: 1.5px solid #e1e1d8;
 	padding-bottom: 5px;
 	color: #92927c;
 	font-size: 0.8rem;
