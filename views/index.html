@@ -65,11 +65,75 @@
 	<!-- MAIN CONTENT -->
 	<section class="main">
 		<div class="PROGRAMS-SECTION">
+			<!-- NEW PROGRAM -->
 			<div class="new-program-section small-2 columns center">
-				<button class="new-program"><img src="../assets/plus_icon.png"></button>
-				<label class="new-program-label">New Program</label>
+				<button class="add new-program-button"><img src="../assets/plus_icon.png"></button>
+				<label class="new-program-label-label">New Program</label>
 			</div>
+			<!-- ALL PROGRAMS -->
 			<div class="index-programs-section small-10 columns right">
+			<!-- FORM SHOWS UP HERE -->
+
+			<form class="program new-program-form">
+				<div class="row">
+					<div class="small-12 columns">
+						<label>Program Type
+						  <select>
+						    <option value="count-series">Count Series</option>
+						    <option value="time-series">Time Series</option>
+						    <option value="membership">Membership</option>
+						  </select>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="small-12 columns">
+						<label>Name
+						  <input type="text" placeholder="Yoga Class" />
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="top small-12 columns center">
+						<label>Allow Online Scheduling</label>
+						<div class="switch">
+						  <input id="allow-online-scheduling" type="checkbox">
+						  <label for="allow-online-scheduling"></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="small-12 columns center">
+						<label>Default Capacity
+						<input type="number"/>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="top small-12 columns center">
+					  <label>Tabs this program is on</label>
+						<div class="row">
+						  <input id="classes" type="checkbox"><label for="classes">classes</label>
+						  <input id="appointments" type="checkbox"><label for="appointments">appointments</label>
+						</div>
+						<div class="row">
+						  <input id="workshops" type="checkbox"><label for="workshops">workshops</label>
+						  <input id="outside" type="checkbox"><label for="outside">outside</label>
+						 </div>
+						 <div class="row">
+						  <input id="inside" type="checkbox"><label for="inside">inside</label>
+						  <input id="gym" type="checkbox"><label for="gym">gym</label>
+						 </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="small-12 columns">
+						<button class="submit new-program-button" role="button" aria-label="submit" href="#">Submit</button>
+					</div>
+				</div>
+			</form>
+
+			<!-- /FORM -->
 				<div class="program">
 					<div class="top small-12 columns">
 						<div class="program-header row"><span class="program-name">Yoga Duets</span><i class="edit"></i></div>
