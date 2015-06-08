@@ -36,6 +36,7 @@ $(document).ready(function() {
 	$("#submitProgram").click(function(e) {
 		e.preventDefault()
 		console.log($('#newProgramForm').serializeArray());
+		// This is the raw JQuery ajax request
 		// $.ajax({
 		// 	type:'POST',
 		// 	url: 'https://api.myjson.com/bins/3j5pw',
