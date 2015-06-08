@@ -1,4 +1,9 @@
 /* GLOBALLY SHARED STYLES */
+html,
+body {
+	font-family: 'Segoe UI';
+}
+
 body {
 	background-color: #f4f4ee;
 }
@@ -49,15 +54,6 @@ button {
 	display: block;
 }
 
-input,
-select {
-	border-radius: 4px;
-}
-
-label {
-	color: #b4b4aa;
-}
-
 /*  NAVIGATION STYLES  */
 
 .top-bar {
@@ -87,8 +83,7 @@ label {
 
 .tabs .tab-title a {
 	padding: 10px 24px;
-	font-family: "Gotham";
-	font-size: 0.87rem;
+	font-size: 0.8rem;
 	font-weight: 500;
 	color: #709582;
 	background-color: rgba(100,100,100, 0);
@@ -102,6 +97,7 @@ label {
 	height: 42px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	z-index: 2;
 }
 
 .tabs .tab-title.active a {
@@ -116,9 +112,30 @@ label {
 	border-bottom: 3px solid white;
 }
 
-.tabs .tab-title.active a:before {
-	content:"";
-	background-color: #fff;
+.tabs .tab-title.active:before {
+	content: "";
+	background-color: transparent;
+	box-shadow: -1.5px 3px 5px rgba(0, 0, 0, 0.7);
+	position: absolute;
+	top: 5px;
+	left: 2px;
+	z-index: -1;
+	width: 10%;
+	height: 80%;
+	transform: rotate(-4deg);
+}
+
+.tabs .tab-title.active:after {
+	content: "";
+	background-color: red;
+	box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.7);
+	position: absolute;
+	top: 5px;
+	right: 2px;
+	z-index: -1;
+	width: 10%;
+	height: 80%;
+	transform: rotate(4deg);
 }
 
 .tabs-content {
@@ -131,11 +148,6 @@ label {
 	-webkit-box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
 		 -moz-box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
 		 			box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
-}
-
-.tabs-content:before {
-	border-top: 1px solid #cbcfd1;
-	z-index: 1;
 }
 
 .tabs-content .item {
