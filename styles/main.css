@@ -8,13 +8,28 @@ body {
 	background-color: #f4f4ee;
 }
 
-/* Just being cute - change to more descriptive */
-.really {
+.text-tiny {
 	font-size: 0.8rem
 }
 
-.quiet {
+.text-muted {
 	color: #bebeb5;
+}
+
+.hidden {
+	display: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+button {
+	position: relative;
+	text-align:center;
+	color:#FFF;
+	text-decoration:none;
+	display: block;
 }
 
 /* fighting off Foundation's table styles */
@@ -36,35 +51,23 @@ table tr:nth-of-type(even) {
 	background-color: transparent;
 }
 
-ul {
-	margin: 0;
-}
-
 table tr td,
 table thead tr th {
 	vertical-align: top;
 	padding: inherit;
 }
 
-button {
-	position: relative;
-	text-align:center;
-	color:#FFF;
-	text-decoration:none;
-	display: block;
-}
-
 /*  NAVIGATION STYLES  */
 
 .top-bar {
-	height: 65px;
+	height: 4.063rem;
 	background-color: #edf7f3;
-	min-width: 1100px;
+	min-width: 68.75rem;
 }
 
 .logo {
 	display: inline-block;
-	margin: 5px 100px 10px 14px;
+	margin: 0.313rem 6.25rem 0.625rem 0.875rem;
 }
 
 .top-bar ul{
@@ -72,17 +75,17 @@ button {
 }
 
 .nav-tabs {
-	padding-top: 22px;
+	padding-top: 1.375rem;
 }
 
 .tabs .tab-title {
-	top: 1px;
+	top: 0.063rem;
 	display: inline-block;
 	background: linear-gradient(0deg, #eff2f1, #fff) no-repeat;
 }
 
 .tabs .tab-title a {
-	padding: 10px 24px;
+	padding: 0.625rem 1.4rem;
 	font-size: 0.8rem;
 	font-weight: 500;
 	color: #709582;
@@ -93,20 +96,20 @@ button {
 }
 
 .tabs .tab-title.active {
-	top: -1px;
-	height: 42px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	top: -0.063rem;
+	height: 2.625rem;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 	z-index: 2;
 }
 
 .tabs .tab-title.active a {
-	padding: 10.5px 30px;
+	padding: 0.656rem 1.875rem;
 	border-top: 1px solid #a7b3b7;
 	border-left: 1px solid #a7b3b7;
 	border-right:1px solid #a7b3b7;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 	font-weight: bold;
 	color: #37444e;
 	border-bottom: 3px solid white;
@@ -115,10 +118,10 @@ button {
 .tabs .tab-title.active:before {
 	content: "";
 	background-color: transparent;
-	box-shadow: -1.5px 3px 5px rgba(0, 0, 0, 0.7);
+	box-shadow: -0.094rem 0.188rem 0.313rem rgba(0, 0, 0, 0.7);
 	position: absolute;
-	top: 5px;
-	left: 2px;
+	top: 0.313rem;
+	left: 0.125rem;
 	z-index: -1;
 	width: 10%;
 	height: 80%;
@@ -128,10 +131,10 @@ button {
 .tabs .tab-title.active:after {
 	content: "";
 	background-color: red;
-	box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.7);
+	box-shadow: 0.094rem 0.188rem 0.313rem rgba(0, 0, 0, 0.7);
 	position: absolute;
-	top: 5px;
-	right: 2px;
+	top: 0.313rem;
+	right: 0.125rem;
 	z-index: -1;
 	width: 10%;
 	height: 80%;
@@ -145,14 +148,14 @@ button {
 	padding-left: 8%;
 	border-top: 1px solid #cbe3d7;
 	border-bottom: 1px solid #d8d8ce;
-	-webkit-box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
-		 -moz-box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
-		 			box-shadow: 0 0 1px 0 rgba(0, 50, 50, 0.21);
+	-webkit-box-shadow: 0 0 0.063rem 0 rgba(0, 50, 50, 0.21);
+		 -moz-box-shadow: 0 0 0.063rem 0 rgba(0, 50, 50, 0.21);
+		 			box-shadow: 0 0 0.063rem 0 rgba(0, 50, 50, 0.21);
 }
 
 .tabs-content .item {
 	display: inline;
-	padding-right: 30px;
+	padding-right: 1.875rem;
 	font-family: Helvetica;
 	font-size: 1rem;
 	font-weight: 400;
@@ -179,28 +182,29 @@ button {
 /* NEW PROGRAM STYLES */
 
 .new-program-section {
-	margin-bottom: 15px;
+	margin-bottom: 0.938rem;
+	padding-left: 0;
 }
 
 .add {
-	width:75px;
-	height:67px;
-	margin-bottom: 5px;
-	padding: 20px;
+	width: 4.688rem;
+	height: 4.188rem;
+	margin-bottom: 0.313rem;
+	padding: 1.25rem;
 }
 
 .submit {
 	width:100%;
-	height:30px;
-	margin-bottom: 5px;
-	padding: 5px;
+	height:1.875rem;
+	margin-bottom: 0.313rem;
+	padding: 0.313rem;
 }
 
 .new-program-button {
 	background: #dfffc2;
 	border: 1px solid #91b57c;
 	background-image: -webkit-linear-gradient(top, #bcd89e, #9ac084);
-	-webkit-border-radius: 4px;
+	border-radius: 4px;
 	box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset,
 							0 -1px 0 rgba(255, 255, 255, .1) inset,
 							0 0.2px 0 #dbdbd2,
@@ -209,8 +213,8 @@ button {
 
 .new-program-button:active {
 	top: 1px;
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset,
-											0 -1px 0 rgba(255, 255, 255, .1) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset,
+							0 -1px 0 rgba(255, 255, 255, .1) inset;
 }
 
 .new-program-button:hover {
@@ -219,7 +223,7 @@ button {
 }
 
 .new-program-button-label {
-	max-width: 76px;
+	max-width: 4.75rem;
 	font-size: 0.75rem;
 	font-weight: 500;
 	text-align: center;
@@ -227,12 +231,8 @@ button {
 
 /* NEW PROGRAM FORM STYLES */
 
-.hidden {
-	display: none;
-}
-
 .new-program-form {
-	padding-bottom: 14px;
+	padding-bottom: 0.875rem;
 }
 
 .switch {
@@ -248,15 +248,15 @@ button {
 }
 
 .online-scheduling-status {
-	padding: 5px 15px;
+	padding: 0.313rem 0.938rem;
 }
 
 /* PROGRAM MODULE STYLES */
 
 .program {
 	float: left;
-	margin: 0 22px 42px 0;
-	width: 245px;
+	margin: 0 1.375rem 2.625rem 0;
+	width: 15.313rem;
 	background-color: #fff;
 	border-radius: 4px;
 	-webkit-box-shadow: 0px 3px 3px -1px rgba(50, 50, 50, 0.3);
@@ -265,17 +265,17 @@ button {
 }
 
 .program .top {
-	padding: 0 17px;
+	padding: 0 1.063rem;
 }
 
 .program .program-header {
-	padding: 17px 0;
+	padding: 1.063rem 0;
 	vertical-align: middle;
 }
 
 .edit {
-	width: 22px;
-	height: 20px;
+	width: 1.375rem;
+	height: 1.25rem;
 	overflow: hidden;
 	float: right;
 	background: url("../assets/pencil_icons.png") no-repeat top;
@@ -301,7 +301,7 @@ button {
 
 /* hack to fight off foundation */
 .accordion .accordion-navigation > a {
-	padding: 5px 17px;
+	padding: 0.313rem 1.063rem;
 	background-color: transparent;
 	float: left;
 	font-weight: 400;
@@ -330,7 +330,7 @@ button {
 /* PROGRAM SUMMARY STYLES */
 
 .summary-section {
-	margin-top: 42px;
+	margin-top: 2.625rem;
 }
 
 .summary-section table {
@@ -339,21 +339,22 @@ button {
 
 .summary-section th:first-of-type {
 	font-size: 1rem;
-	width: 130px;
+	width: 8.125rem;
 }
 
 .summary-section th:nth-of-type(2) {
-	width: 110px;
+	width: 6.875rem;
 }
 
 .summary-section th {
-	border-bottom: 1.5px solid #e1e1d8;
-	padding-bottom: 5px;
+	border-bottom: 1.6px solid #e1e1d8;
+	padding-bottom: 0.313rem;
 	color: #92927c;
 	font-size: 0.8rem;
 }
 
 .summary-section td {
-	padding-top: 20px;
+	padding-top: 1.25rem;
 	font-size: 1rem;
+	color: #4d4d42;
 }
