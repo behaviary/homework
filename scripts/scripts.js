@@ -11,22 +11,6 @@ $(document).ready(function() {
 		}
 	})
 
-	$("#submitProgram").click(function(e) {
-		e.preventDefault()
-		console.log($('#newProgramForm').serializeArray());
-		// $.ajax({
-		// 	type:'POST',
-		// 	url: 'https://api.myjson.com/bins/3j5pw',
-		// 	data: JSON.stringify($('#newProgramForm').serializeArray()),
-		// 	success: function(response) {
-	 //    	alert("You have created a new program!");
-		// 	},
-		// 	error: function(response) {
-		// 		alert(response);
-		// 	}
-		// });
-	});
-
 	$('.add').click(function() {
 		$('.new-program-form').removeClass('hidden')
 	});
