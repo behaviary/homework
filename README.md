@@ -11,6 +11,8 @@ There are some other cool things that Knockout helped with like the formatCurren
 
 I look forward to talking about code with you soon!
 
+#UPDATE: [DEMO HERE](https://dl.dropboxusercontent.com/u/20307477/views/index.html)
+
 
 ## Your challenge, should you choose to accept it
 1. Clone this repo (or download the zip archive) to get started.
