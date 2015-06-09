@@ -40,9 +40,9 @@ $(document).ready(function() {
 	$('#newProgramName').keyup(function(e){
 		$('#formTitle').text($('#newProgramName').val());
 		if ($('#newProgramName').val() == 0) {
-			$('#formTitle').text("New program")
+			$('#formTitle').text("New program");
 		}
-	})
+	});
 
 	$("#submitProgram").click(function(e) {
 		e.preventDefault()

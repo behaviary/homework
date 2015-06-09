@@ -74,7 +74,7 @@
 			</div>
 			<!-- ALL PROGRAMS -->
 			<div class="index-programs-section small-12 medium-10 columns right">
-				<!-- FORM SHOWS UP HERE -->
+				<!-- FORM TEMPLATE -->
 				<form id="newProgramForm" class="program new-program-form hidden">
 					<input type="hidden" name="ProgramId" value="105">
 					<div class="program-header row">
@@ -150,236 +150,84 @@
 					</div>
 				</form>
 				<!-- /FORM -->
-				<!-- PROGRAM 1 -->
-				<div class="program">
-					<div class="top small-12 columns">
-						<div class="program-header row"><span class="program-name">Yoga Classes</span><i class="edit"></i></div>
-						<div class="program-sales-graph row">
-							<div class="small-12 columns">
-								<div class="row text-muted">Sales by month</div>
-								<div class="row"><img src="../assets/graph.png"></div>
+				<!-- PROGRAM TEMPLATE -->
+				<div data-bind="foreach: programs">
+					<div class="program">
+						<div class="top small-12 columns">
+							<div class="program-header row"><span class="program-name" data-bind="text: Name"></span><i class="edit"></i></div>
+							<div class="program-sales-graph row">
+								<div class="small-12 columns">
+									<div class="row text-muted">Sales by month</div>
+									<div class="row"><img src="../assets/graph.png"></div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="program-sales-details top row">
-						<table class="table">
-							<thead class="table">
-								<tr>
-									<th class="table text-tiny text-muted">Total Monthly</th>
-									<th class="table text-tiny text-muted">Current</th>
-									<th class="table text-tiny text-muted">1-Year</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="table td text-muted">Sales</td>
-									<td class="table td">$23,483</td>
-									<td class="table td"><img src="../assets/spark_line.png"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<ul class="pricing-option-details accordion more" data-accordion>
-						<li class="accordion-navigation">
-							<div id="program1" class="content">
-								 <table class="table">
-									<thead class="table">
-										<tr>
-											<th class="text-muted">Price Name</th>
-											<th class="text-tiny text-muted">Current</th>
-											<th class="text-tiny text-muted">1-Year</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Monthly Unlimited</td>
-											<td>$4,260</td>
-											<td rowspan="7" class="spark-lines"></td>
-										</tr>
-										<tr>
-											<td>Student 1 Month</td>
-											<td>$1,750</td>
-										</tr>
-										<tr>
-											<td>Single Visit</td>
-											<td>$560</td>
-										</tr>
-										<tr>
-											<td>10 Class Pass</td>
-											<td>$475</td>
-										</tr>
-										<tr>
-											<td>Student Single Visit</td>
-											<td>$445</td>
-										</tr>
-										<tr>
-											<td>20 Class Pass</td>
-											<td>$230</td>
-										</tr>
-										<tr>
-											<td>5 Class Pass</td>
-											<td>$520</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<a id="moreProgram1" href="#program1">more</a>
-						</li>
-					</ul>
-				</div>
-					<!-- PROGRAM 2 -->
-				<div class="program">
-					<div class="top small-12 columns">
-						<div class="program-header row"><span class="program-name">Yoga Privates</span><i class="edit"></i></div>
-						<div class="program-sales-graph row">
-							<div class="small-12 columns">
-								<div class="row text-muted">Sales by month</div>
-								<div class="row"><img src="../assets/graph.png"></div>
-							</div>
+						<div class="program-sales-details top row">
+							<table class="table">
+								<thead class="table">
+									<tr>
+										<th class="table text-tiny text-muted">Total Monthly</th>
+										<th class="table text-tiny text-muted">Current</th>
+										<th class="table text-tiny text-muted">1-Year</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="table td text-muted">Sales</td>
+										<td class="table td" data-bind="text: formatCurrency(TotalMonthlySales)"></td>
+										<td class="table td"><img src="../assets/spark_line.png"></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
+						<ul class="pricing-option-details accordion more" data-accordion>
+							<li class="accordion-navigation">
+								<div class="content" data-bind="attr: {id:'program' + $index()}">
+									 <table class="table">
+										<thead class="table">
+											<tr>
+												<th class="text-muted">Price Name</th>
+												<th class="text-tiny text-muted">Current</th>
+												<th class="text-tiny text-muted">1-Year</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Monthly Unlimited</td>
+												<td>$4,260</td>
+												<td rowspan="7" class="spark-lines"></td>
+											</tr>
+											<tr>
+												<td>Student 1 Month</td>
+												<td>$1,750</td>
+											</tr>
+											<tr>
+												<td>Single Visit</td>
+												<td>$560</td>
+											</tr>
+											<tr>
+												<td>10 Class Pass</td>
+												<td>$475</td>
+											</tr>
+											<tr>
+												<td>Student Single Visit</td>
+												<td>$445</td>
+											</tr>
+											<tr>
+												<td>20 Class Pass</td>
+												<td>$230</td>
+											</tr>
+											<tr>
+												<td>5 Class Pass</td>
+												<td>$520</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<a data-bind="attr: { href: '#program' + $index()}">more</a>
+							</li>
+						</ul>
 					</div>
-					<div class="program-sales-details top row">
-						<table class="table">
-							<thead class="table">
-								<tr>
-									<th class="table text-tiny text-muted">Total Monthly</th>
-									<th class="table text-tiny text-muted">Current</th>
-									<th class="table text-tiny text-muted">1-Year</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="table td text-muted">Sales</td>
-									<td class="table td">$23,483</td>
-									<td class="table td"><img src="../assets/spark_line.png"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<ul class="pricing-option-details accordion more" data-accordion>
-						<li class="accordion-navigation">
-							<div id="program2" class="content">
-								 <table class="table">
-									<thead class="table">
-										<tr>
-											<th class="text-muted">Price Name</th>
-											<th class="text-tiny text-muted">Current</th>
-											<th class="text-tiny text-muted">1-Year</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Monthly Unlimited</td>
-											<td>$4,260</td>
-											<td rowspan="7" class="spark-lines"></td>
-										</tr>
-										<tr>
-											<td>Student 1 Month</td>
-											<td>$1,750</td>
-										</tr>
-										<tr>
-											<td>Single Visit</td>
-											<td>$560</td>
-										</tr>
-										<tr>
-											<td>10 Class Pass</td>
-											<td>$475</td>
-										</tr>
-										<tr>
-											<td>Student Single Visit</td>
-											<td>$445</td>
-										</tr>
-										<tr>
-											<td>20 Class Pass</td>
-											<td>$230</td>
-										</tr>
-										<tr>
-											<td>5 Class Pass</td>
-											<td>$520</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<a id="moreProgram2" href="#program2">more</a>
-						</li>
-					</ul>
-				</div>
-					<!-- PROGRAM 3 -->
-				<div class="program">
-					<div class="top small-12 columns">
-						<div class="program-header row"><span class="program-name">Yoga Duets</span><i class="edit"></i></div>
-						<div class="program-sales-graph row">
-							<div class="small-12 columns">
-								<div class="row text-muted">Sales by month</div>
-								<div class="row"><img src="../assets/graph.png"></div>
-							</div>
-						</div>
-					</div>
-					<div class="program-sales-details top row">
-						<table class="table">
-							<thead class="table">
-								<tr>
-									<th class="table text-tiny text-muted">Total Monthly</th>
-									<th class="table text-tiny text-muted">Current</th>
-									<th class="table text-tiny text-muted">1-Year</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="table td text-muted">Sales</td>
-									<td class="table td">$23,483</td>
-									<td class="table td"><img src="../assets/spark_line.png"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<ul class="pricing-option-details accordion more" data-accordion>
-						<li class="accordion-navigation">
-							<div id="program3" class="content">
-								 <table class="table">
-									<thead class="table">
-										<tr>
-											<th class="text-muted">Price Name</th>
-											<th class="text-tiny text-muted">Current</th>
-											<th class="text-tiny text-muted">1-Year</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Monthly Unlimited</td>
-											<td>$4,260</td>
-											<td rowspan="7" class="spark-lines"></td>
-										</tr>
-										<tr>
-											<td>Student 1 Month</td>
-											<td>$1,750</td>
-										</tr>
-										<tr>
-											<td>Single Visit</td>
-											<td>$560</td>
-										</tr>
-										<tr>
-											<td>10 Class Pass</td>
-											<td>$475</td>
-										</tr>
-										<tr>
-											<td>Student Single Visit</td>
-											<td>$445</td>
-										</tr>
-										<tr>
-											<td>20 Class Pass</td>
-											<td>$230</td>
-										</tr>
-										<tr>
-											<td>5 Class Pass</td>
-											<td>$520</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<a id="moreProgram3" href="#program3">more</a>
-						</li>
-					</ul>
 				</div>
 				<div class="summary-section">
 					<table class="table">
@@ -406,16 +254,15 @@
 				</div>
 			</div>
 		</div>
-
 	</section>
 	<footer></footer>
-
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="http://cdn.foundation5.zurb.com/foundation.js"></script>
-	<script type="text/javascript" src="../scripts/scripts.js"></script>
-	<!--
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+	<script type="text/javascript" src="../scripts/scripts.js"></script>
+	<script type="text/javascript" src="../scripts/app.js"></script>
+	<!--
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js"></script>
 	-->
 
