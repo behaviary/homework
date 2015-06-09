@@ -81,6 +81,7 @@ table thead tr th {
 .tabs .tab-title {
 	top: 0.063rem;
 	display: inline-block;
+	background: -webkit-linear-gradient(90deg, #eff2f1, #fff) no-repeat;
 	background: linear-gradient(0deg, #eff2f1, #fff) no-repeat;
 }
 
@@ -125,7 +126,9 @@ table thead tr th {
 	z-index: -1;
 	width: 10%;
 	height: 60%;
-	transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	    -ms-transform: rotate(-4deg);
+	        transform: rotate(-4deg);
 }
 
 .tabs .tab-title.active:after {
@@ -138,7 +141,9 @@ table thead tr th {
 	z-index: -1;
 	width: 10%;
 	height: 60%;
-	transform: rotate(4deg);
+	-webkit-transform: rotate(4deg);
+	    -ms-transform: rotate(4deg);
+	        transform: rotate(4deg);
 }
 
 .tabs-content {
@@ -201,6 +206,7 @@ table thead tr th {
 .new-program-button {
 	background: #dfffc2;
 	border: 1px solid #91b57c;
+	background-image: -webkit-linear-gradient(top, #bcd89e, #9ac084);
 	background-image: linear-gradient(to bottom, #bcd89e, #9ac084);
 	border-radius: 4px;
 	box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset,
@@ -217,6 +223,7 @@ table thead tr th {
 
 .new-program-button:hover {
 	background: #dfffc2;
+	background-image: -webkit-linear-gradient(top, #9ac084, #bcd89e);
 	background-image: linear-gradient(to bottom, #9ac084, #bcd89e);
 }
 
