@@ -1,3 +1,17 @@
+# CHALLENGE ACCEPTED!
+
+The tools that I used:
+Basic: ZURB Foundation and JQuery
+Bonus: Grunt, Autoprefixer, and Knockout
+
+There are two versions of this project: The first is the completed static version which uses hard-coded data. It is purely presentational. That version can be found in the [basic branch](https://github.com/pndpo/homework/tree/basic "Hehe basic branches").
+
+In the [bonus version](https://github.com/pndpo/homework/tree/bonus), I learned some Knockout (hopefully I didn't break too many standards) and used it to ping the two APIs and populate all the data in the page (except for the drawn charts - ran out of time, darn!). This version also uses grunt with 'Autoprefixer' so I don't have to think about vendor prefixes too much.
+There are some other cool things that Knockout helped with like the formatCurrency utility function called in the view, and other such amenities.
+
+I look forward to talking about code with you soon!
+
+
 ## Your challenge, should you choose to accept it
 1. Clone this repo (or download the zip archive) to get started.
 2. The page should look like [business_overview.png](business_overview.png) on the page load:
