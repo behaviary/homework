@@ -322,6 +322,8 @@ table thead tr th {
 }
 
 .accordion table tr td {
+	overflow: hidden;
+	white-space: nowrap;
 	font-size: 0.7rem;
 	color: #777;
 }
