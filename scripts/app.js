@@ -1,71 +1,76 @@
-function ProgramsModel(programs) {
+function ProgramsModel() {
 	self = this
-	self.programs = ko.observableArray(programs);
-
+	self.programs = ko.observableArray([]);
+	self.pricingOptions = ko.observableArray([]);
+	self.matchID = function (optionProgramID, programID) {
+		if (optionProgramID === programID) {
+			return Name
+		}
+	}
 }
 
-function PricingOptionsModel(options) {
-	self = this
-	self.pricingOptions = ko.observableArray(options);
+function viewsOrVisits(Name) {
+	return !!Name.match(/\bvideo/i) ? "views" : "visits"
+}
 
+function moreOrLess(event) {
+	var self = event.target
+	if ($(self).text() == 'more') {
+		$(self).text('less')
+	} else {
+		$(self).text('more');
+	}
 }
 
 function formatCurrency(money) {
-	// regex inspired by Stack Overflow ;)
 	return '$' + parseFloat(money, 10)
 	.toFixed(0)
 	.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
 	.toString()
 }
 
-// var programs = [
-// 		{"ProgramID":100,
-// 			"Name":"Yoga Classes",
-// 			"TotalMonthlySales":28458,
-// 			"MonthlyAttendance":88,
-// 			"Sales":
-// 				{"CurrentYear":[30001,28889,39000,29084,29084,19080,24854],
-// 				"PreviousYear":[29015,26188,40100,27055,21055,24055,26055]}},
-
-// 		 {"ProgramID":101,
-// 			"Name":"Yoga Privates",
-// 			"TotalMonthlySales":23483,
-// 			"MonthlyAttendance":301,
-// 			"Sales":
-// 				{"CurrentYear":[19080,24854,29445,24453,15834,23898,32010],
-// 				"PreviousYear":[24055,26055,28455,24000,12005,22511,28515]}},
-
-// 		 {"ProgramID":102,
-// 			"Name":"Yoga Duets",
-// 			"TotalMonthlySales":28488,
-// 			"MonthlyAttendance":156,
-// 			"Sales":
-// 				{"CurrentYear":[28889,39000,29445,24453,15834,23898,32010],
-// 				"PreviousYear":[29015,26188,40100,24000,12005,22511,28515]}},
-
-// 		 {"ProgramID":103,
-// 			"Name":"Open Practice",
-// 			"TotalMonthlySales":572,
-// 			"MonthlyAttendance":276,
-// 			"Sales":
-// 				{"CurrentYear":[28889,39000,29445,24453,15834,23898,32010],
-// 				"PreviousYear":[29015,26188,40100,24000,12005,22511,28515]}},
-
-// 		 {"ProgramID":104,
-// 			"Name":"Yoga Videos",
-// 			"TotalMonthlySales":391.32,
-// 			"MonthlyAttendance":82,
-// 			"Sales":
-// 				{"CurrentYear":[28889,39000,29445,24453,15834,23898,32010],
-// 				"PreviousYear":[29015,26188,40100,24000,12005,22511,28515]}}
-// 	]
-
+// Q: How can I use a Data Store with KO?
+// var data = (function(){
+// 		var _programs,
+// 				_options;
+//
+//     $.getJSON("https://api.myjson.com/bins/5bdb3", function(data) {
+//     	_programs = data;
+//     });
+//
+//     $.getJSON("https://api.myjson.com/bins/17oy7", function(data) {
+//     	_options = data;
+//     });
+//
+//     return {
+//     	getPrograms: function() {
+//         if (_programs) {
+//         	return _programs
+//         } else {
+//         	throw "NoDataError!"
+//         }
+//       },
+//      	getOptions: function() {
+//         if (_options) {
+//         	return _options
+//         } else {
+//         	throw "NoDataError!"
+//         }
+//       }
+//     };
+// })();
 
 $(function() {
-	$.getJSON("https://api.myjson.com/bins/5bdb3", function(programsData) {
-		ko.applyBindings(new ProgramsModel(programsData));
+	var programsModel = new ProgramsModel
+
+	$.getJSON("https://api.myjson.com/bins/5bdb3", function(data) {
+		programsModel.programs(data);
 	});
-	// $.getJSON("https://api.myjson.com/bins/5bdb3", function(options) {
-	// 	ko.applyBindings(new PricingOptionsModel(options));
-	// })
-})
+
+	$.getJSON("https://api.myjson.com/bins/17oy7", function(data) {
+		programsModel.pricingOptions(data);
+	});
+
+	ko.applyBindings(programsModel);
+
+});

@@ -15,18 +15,6 @@ $(document).ready(function() {
 		$('.new-program-form').removeClass('hidden')
 	});
 
-	// This toggles the more/less link on the bottom of each program mod.
-	// yay for JQuery handling closures for us!
-	$('.program').each(function(i) {
-		$('#moreProgram' + i).click(function(){
-			if ($('#moreProgram' + i).text() == 'more') {
-				$('#moreProgram' + i).text('less')
-			} else {
-				$('#moreProgram' + i).text('more');
-			}
-		});
-	});
-
 	// A little UI sugar for when users enable online scheduling.
 	$('.switch').click(function(e) {
     if ($('.switch input:checked').length > 0){
