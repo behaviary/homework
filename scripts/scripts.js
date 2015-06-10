@@ -15,6 +15,10 @@ $(document).ready(function() {
 		$('.new-program-form').removeClass('hidden')
 	});
 
+	$('.cancel').click(function() {
+		$('.new-program-form').addClass('hidden')
+	});
+
 	// A little UI sugar for when users enable online scheduling.
 	$('.switch').click(function(e) {
     if ($('.switch input:checked').length > 0){

@@ -81,15 +81,14 @@
 			<!-- ALL PROGRAMS -->
 			<div class="index-programs-section small-12 medium-10 columns right">
 				<!-- FORM TEMPLATE -->
-				<form id="newProgramForm" class="program new-program-form hidden" data-bind="value: programs">
+				<form id="newProgramForm" class="small-12 columns program new-program-form hidden" data-bind="value: programs">
 					<input type="hidden" name="ProgramId" value="105">
 					<div class="program-header row">
-						<div class="small-12 columns">
-							<div id="formTitle" class="program-name">New Program</div>
-						</div>
+						<span id="formTitle" class="program-name">New Program</span>
+						<div class="right text-center cancel"><div class="little-button">x</div></div>
 					</div>
 					<div class="row">
-						<div class="small-12 columns">
+						<div>
 							<label>Program Type
 							  <select name="program-type">
 							    <option value="" disabled selected>Select a type</option>
@@ -101,14 +100,14 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="small-12 columns">
+						<div>
 							<label for="name">Name
 							  <input name="Name" id="newProgramName" type="text" placeholder="Yoga Class" />
 							</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="top small-12 columns center">
+						<div class="center">
 							<label>Allow Online Scheduling</label>
 							<div class="switch">
 							  <input name="online-scheduling" id="allow-online-scheduling" type="checkbox">
@@ -120,14 +119,14 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="small-12 columns center">
+						<div class="center">
 							<label>Default Capacity
 							<input name="capacity" type="number"/>
 							</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="top small-12 columns center">
+						<div class="center">
 						  <label>Tabs this program is on:</label>
 							<div class="row">
 								<div class="small-12 columns">
@@ -150,8 +149,9 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="small-12 columns">
+						<div>
 							<button id="submitProgram" class="submit new-program-button" role="button" aria-label="submit" href="#">Submit</button>
+							<div class=" text-center cancel">cancel</div>
 						</div>
 					</div>
 				</form>
@@ -161,7 +161,7 @@
 					<!-- ko if: ProgramID <= 102 -->
 					<div class="program">
 						<div class="top small-12 columns">
-							<div class="program-header row"><span class="program-name" data-bind="text: Name"></span><i class="edit"></i></div>
+							<div class="program-header row"><span class="program-name" data-bind="text: Name"></span><i class="edit little-button"></i></div>
 							<div class="program-sales-graph row">
 								<div class="small-12 columns">
 									<div class="row text-muted">Sales by month</div>

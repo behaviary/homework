@@ -32,6 +32,15 @@ button {
 	display: block;
 }
 
+.little-button {
+	width: 1.375rem;
+	height: 1.25rem;
+	border: 1px solid #f4f4f1;
+	border-radius: 2px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
 /* fighting off Foundation's table styles */
 .table {
 	background-color: transparent;
@@ -240,6 +249,15 @@ table thead tr th {
 	padding-bottom: 0.875rem;
 }
 
+.cancel {
+	color: #777;
+	cursor: pointer;
+}
+
+.cancel:hover {
+	color: #ddd;
+}
+
 .switch {
 	margin: 1rem 0;
 }
@@ -277,14 +295,10 @@ table thead tr th {
 }
 
 .edit {
-	width: 1.375rem;
-	height: 1.25rem;
 	overflow: hidden;
 	float: right;
 	background: url("../assets/pencil_icons.png") no-repeat top;
 	background-color: #fcfcfa;
-	border: 1px solid #f4f4f1;
-	border-radius: 2px;
 }
 
 .edit:hover {
