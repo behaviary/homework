@@ -331,15 +331,30 @@ table thead tr th {
 	background-size: cover;
 	width: 3.8rem;
 }
+
+.accordion table {
+	table-layout: fixed;
+}
+
 .accordion table thead th {
 	background-color: white
 }
 
 .accordion table tr td {
+	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
 	font-size: 0.7rem;
 	color: #777;
+}
+
+.first-col {
+	width: 5rem;
+	border-collapse: separate;
+	border-spacing: 0.5rem;
+}
+
+.second-col {
 }
 
 /* PROGRAM SUMMARY STYLES */

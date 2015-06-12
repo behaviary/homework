@@ -85,7 +85,7 @@
 					<input type="hidden" name="ProgramId" value="105">
 					<div class="program-header row">
 						<span id="formTitle" class="program-name">New Program</span>
-						<div class="right text-center cancel"><div class="little-button">x</div></div>
+						<div class="right text-center cancel"><div class="little-button"><i class="fi-x"></i></div></div>
 					</div>
 					<div class="row">
 						<div>
@@ -191,8 +191,8 @@
 							<li class="accordion-navigation">
 								<div class="content" data-bind="attr: {id:'program' + $index()}">
 									 <table class="table">
-									 	<col>
-									 	<col>
+									 	<col class="first-col">
+									 	<col class="second-col">
 									 	<col rowspan="7" class="spark-lines">
 										<thead class="table">
 											<tr>
@@ -204,7 +204,7 @@
 										<tbody data-bind="foreach: $parent.pricingOptions">
 											<!-- ko if: ($parent.ProgramID === ProgramID) -->
 											<tr>
-												<td><span data-bind="text: Name">Monthly Unlimited</span></td>
+												<td data-bind="text: Name, attr:{title: Name}">Monthly Unlimited</td>
 												<td data-bind="text: formatCurrency(Sales)">$4,260</td>
 												<td></td>
 											</tr>
@@ -212,7 +212,7 @@
 										</tbody>
 									</table>
 								</div>
-								<a data-bind="attr: {href: '#program' + $index(), id: 'moreProgram' + $index()},click: moreOrLess(event)">more</a>
+								<a data-bind="attr: {href: '#program' + $index(), id: 'moreProgram' + $index()},click: function(event) {moreOrLess(event)}">more</a>
 							</li>
 						</ul>
 					</div>
