@@ -2,9 +2,9 @@ $(document).ready(function() {
 
 	// Mock functionality of tabs
 	$('.tab-title').click(function(e) {
-		var $dash = $('#dashboard');
+		var $dash = $('#tab-dashboard');
 		var id = this.id
-		if (id == 'dashboard') {
+		if (id == 'tab-dashboard') {
 			$('.main').removeClass('hidden');
 		} else {
 			$('.main').addClass('hidden');
@@ -39,18 +39,6 @@ $(document).ready(function() {
 	$("#submitProgram").click(function(e) {
 		e.preventDefault()
 		console.log($('#newProgramForm').serializeArray());
-		// This is the raw JQuery ajax POST request
-		// $.ajax({
-		// 	type:'POST',
-		// 	url: 'https://api.myjson.com/bins/3j5pw',
-		// 	data: JSON.stringify($('#newProgramForm').serializeArray()),
-		// 	success: function(response) {
-	 //    	alert("You have created a new program!");
-		// 	},
-		// 	error: function(response) {
-		// 		alert(response);
-		// 	}
-		// });
 	});
 
 	$(document).foundation();

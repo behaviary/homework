@@ -94,6 +94,23 @@ table thead tr th {
 	background: linear-gradient(0deg, #eff2f1, #fff) no-repeat;
 }
 
+/*  first tab in the menu  */
+#tab-dashboard {
+	border-left: 1px solid #d4e2e6;
+}
+
+.tabs .tab-title:before {
+	content: "";
+	width: 0.0625rem;
+	height: 2rem;
+	background: -webkit-linear-gradient(top, transparent, #bbb, transparent);
+	background: linear-gradient(to bottom, transparent, #bbb, transparent);
+	z-index: 9001; /*  IT'S OVER NINE THOUUUSSAAAANNND */
+	position: absolute;
+	top: 0.3125rem;
+	right: 0;
+}
+
 .tabs .tab-title a {
 	padding: 0.625rem 1.4rem;
 	font-size: 0.8rem;
@@ -101,7 +118,6 @@ table thead tr th {
 	color: #709582;
 	background-color: rgba(100,100,100, 0);
 	border-top: 1px solid #d4e2e6;
-	border-left: 1px solid #dddede;
 	border-bottom: 1px solid #cbcfd1;
 }
 
@@ -317,6 +333,10 @@ table thead tr th {
 }
 
 /* hack to fight off foundation */
+.pricing-option-details {
+	margin: 0;
+}
+
 .accordion .accordion-navigation > a {
 	padding: 0.313rem 1.063rem;
 	background-color: transparent;
@@ -351,7 +371,7 @@ table thead tr th {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	color: #777;
 }
 
@@ -361,8 +381,16 @@ table thead tr th {
 	border-spacing: 0.5rem;
 }
 
-.second-col {
-}
+/* Hardcoded for presentational purposes. */
+/* This would be ridiculous in production */
+.position0 {background-position-y: 0;}
+.position1 {background-position-y: -1.3rem;}
+.position2 {background-position-y: -2.4rem;}
+.position3 {background-position-y: -3.6rem;}
+.position4 {background-position-y: -4.6rem;}
+.position5 {background-position-y: -5.6rem;}
+.position6 {background-position-y: -6.7rem;}
+
 
 /* PROGRAM SUMMARY STYLES */
 

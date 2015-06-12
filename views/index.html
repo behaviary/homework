@@ -20,7 +20,7 @@
 			<a href="/"><img src="../assets/logo.png"></a>
 		</div>
 		<ul class="nav-tabs tabs right" data-tab>
-			<li id="dashboard" class="tab-title active">
+			<li id="tab-dashboard" class="tab-title active">
 				<a href="#dashboard">Dashboard</a>
 			</li>
 			<li class="tab-title">
@@ -193,7 +193,7 @@
 									 <table class="table">
 									 	<col class="first-col">
 									 	<col class="second-col">
-									 	<col rowspan="7" class="spark-lines">
+									 	<col rowspan="7">
 										<thead class="table">
 											<tr>
 												<th class="text-muted">Price Name</th>
@@ -206,7 +206,7 @@
 											<tr>
 												<td data-bind="text: Name, attr:{title: Name}">Monthly Unlimited</td>
 												<td data-bind="text: formatCurrency(Sales)">$4,260</td>
-												<td></td>
+												<td class="spark-lines" data-bind="css:'position' + Math.floor(Math.random()*7)"></td>
 											</tr>
 											<!-- /ko -->
 										</tbody>
